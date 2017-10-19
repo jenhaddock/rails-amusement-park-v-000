@@ -1,0 +1,16 @@
+<h1>User Info</h1>
+
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, class: name %>
+<% end %>
+
+Name: <%= @user.name %>
+Mood: <%= @user.mood %>
+Height: <%= @user.height %>
+Tickets: <%= @user.tickets %>
+<% if @user.admin == true %>
+ ADMIN
+<% end %>
+
+<%= link_to "See attractions", attractions_path %>
+<%= link_to "Log Out", signout_path %>
